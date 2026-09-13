@@ -21,7 +21,7 @@ export default function AvailablePlayers({
 
   return (
     <>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mb-[70px]">
+      <div className="grid bg-[#F8FAFC] grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mb-[70px]">
         {players.map((player, index) => (
           <PlayerCard key={index} player={player}
           coin={coin} setCoin={setCoin}

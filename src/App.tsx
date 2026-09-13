@@ -4,6 +4,9 @@ import { Nav } from "./components/Nav"
 import Players from "./components/players/Players";
 import type { PlayerType } from "./components/type/Type";
 import Footer from "./components/Footer";
+import TopPlayers from "./components/TopPlayers";
+import TeamCTA from "./components/Teams";
+import AboutUs from "./components/AboutUs";
 
 
 const playersPromise = async(): Promise<PlayerType[]> => {
@@ -17,7 +20,7 @@ const playersPromiseResult = playersPromise();
 
 function App() {
 
-  const [coin, setCoin] = useState(5000000);
+  const [coin, setCoin] = useState(10000000);
 
   return (
     <>
@@ -26,11 +29,17 @@ function App() {
       
       <Banner></Banner>
 
+      <TopPlayers></TopPlayers>
+
       <Suspense fallback={<h3>Loading.....</h3>}> 
         <Players playersPromise={playersPromiseResult}
         coin={coin} setCoin={setCoin}
         ></Players>
       </Suspense>
+
+      <AboutUs></AboutUs>
+
+      <TeamCTA></TeamCTA>
 
       <Footer></Footer>
     </>
